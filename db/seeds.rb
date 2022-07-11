@@ -27,7 +27,6 @@ a7 = Activity.create( name: "Origami Frog", image: "", description: "", category
 a8 = Activity.create( name: "Get Up and Move Dice Game", image: "", description: "", category_id: c3.id )
 a9 = Activity.create( name: "Kid Yoga", image: "", description: "", category_id: c3.id )
 a10 = Activity.create( name: "Floor is Lava", image: "", description: "", category_id: c3.id )
-
 a11 = Activity.create( name: "Dance Dance Revolution", image: "", description: "", category_id: c3.id)
 
-puts "done seeding"
+puts "done seeding -- CHANGE FOR TEST PURPOSES"
