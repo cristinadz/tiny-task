@@ -5,7 +5,7 @@ import SignupForm from '../components/SignupForm'
 function Login({onLogin}) {
   return (
     <div>
-        <LoginForm />
+        <LoginForm onLogin = {onLogin}/>
         <SignupForm onLogin = {onLogin} />
     </div>
   )

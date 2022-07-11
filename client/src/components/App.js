@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Login from '../pages/Login';
+import NavBar from './NavBar';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar user = {user} setUser= {setUser} />
       <Login />
     </div>
   );
