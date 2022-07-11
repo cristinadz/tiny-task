@@ -14,7 +14,7 @@ c3 = Category.create(name: "Movement")
 
 puts "creating Activities..."
 
-a1 = Activity.create( name: "Pipe Cleaner Constellation", image: "https://www.123homeschool4me.com/wp-content/uploads/2017/08/Stars-Activity-1-800x533.jpg", description: "constellation cards, pipe cleaners, star beads", category_id: 1 a2 )
+a1 = Activity.create( name: "Pipe Cleaner Constellation", image: "https://www.123homeschool4me.com/wp-content/uploads/2017/08/Stars-Activity-1-800x533.jpg", description: "constellation cards, pipe cleaners, star beads", category_id: c1.id )
 a2 = Activity.create( name: "Backyard Treasure Hunt", image: "", description: "", category_id: c1.id )
 a3 = Activity.create( name: "Fraction Flowers", image: "", description: "", category_id: c1.id )
 a4 = Activity.create( name: "Binary Code Jewelry", image: "", description: "", category_id: c1.id )
