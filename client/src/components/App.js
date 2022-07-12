@@ -19,6 +19,10 @@ function App() {
 
   if (!user) return <Login onLogin={setUser} />;
 
+
+
+
+  
   return (
     <div className='App'>
       <NavBar user={user} setUser={setUser} />
