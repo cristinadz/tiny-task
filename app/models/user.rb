@@ -4,7 +4,7 @@ class User < ApplicationRecord
     has_many :activities, through: :favorited_activities
     
     validates :username, presence: true, uniqueness: true
-    validates :email, uniqueness: true, on: :create
-    # do we want to add an email validator 
+    
+    # do we want to add an email validator https://mailtrap.io/blog/rails-email-validation/
 
 end
