@@ -3,15 +3,15 @@ import React from 'react'
 function ActivityCard({activity}) {
 
     function handleAddFavorite(e){
-        console.log(e.target.value)
+        let id = e.target.value
 
-        // fetch('/favorited_activities', {
-        //     method: 'POST',
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({ activity }),
-        //   })
+        fetch('/favorited_activities', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id }),
+          })
     }
 
   return (
