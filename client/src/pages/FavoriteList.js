@@ -5,7 +5,7 @@ function FavoriteList() {
     const [ favorites, setFavorites ] = useState([])
 
     useEffect(() => {
-        fetch("/favorited_activities/")
+        fetch("/favorited_activities")
           .then((r) => r.json())
           .then(setFavorites);
       }, []);

@@ -7,6 +7,9 @@ class FavoritedActivitiesController < ApplicationController
     end
 
     def index 
+        
+        #render json: FavoritedActivity.all, include: ['catname']
+
         if params[:activity_id]
             a = Activity.find(params[:activity_id])
             category = a.category
@@ -16,6 +19,16 @@ class FavoritedActivitiesController < ApplicationController
         render json: category
     end
 
+
+    def destroy
+        find_fav_activity.destroy
+        head :no_content
+    end
+
+    private
+    def find_fav_activity
+        FavoritedActivity.find(params[:id])
+    end
 
 end
 
