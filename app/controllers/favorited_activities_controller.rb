@@ -7,15 +7,22 @@ class FavoritedActivitiesController < ApplicationController
     end
 
     def index 
-        if params[:activity_id]
-            a = Activity.find(params[:activity_id])
-            category = a.category
-        else
-            category = FavoritedActivity.all 
-        end
-        render json: category
+        render json: @current_user.favorited_activities, include: 'activity.category'
     end
 
+    def update
+        
+    end
+
+    def destroy
+        find_fav_activity.destroy
+        head :no_content
+    end
+
+    private
+    def find_fav_activity
+        FavoritedActivity.find(params[:id])
+    end
 
 end
 

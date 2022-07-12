@@ -17,7 +17,7 @@ function ActivityCard({activity}) {
   return (
     <div>
         <h3> {activity.name} </h3>
-        <img src={activity.image}/>
+        <img alt="activity" src={activity.image}/>
         <p>category: {activity.category.name}</p>
         <button>see more</button>
         <button onClick={handleAddFavorite} value={activity.id}> 💟 </button>
