@@ -11,7 +11,9 @@ class FavoritedActivitiesController < ApplicationController
     end
 
     def update
-        
+        favorite = FavoritedActivity.find_by(id: params[:id])
+        favorite.update(favorite_params)
+        render json: favorite
     end
 
     def destroy
@@ -23,6 +25,10 @@ class FavoritedActivitiesController < ApplicationController
     def find_fav_activity
         FavoritedActivity.find(params[:id])
     end
+
+def favorite_params
+    params.permit(:completed)
+end
 
 end
 
