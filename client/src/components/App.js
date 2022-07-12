@@ -4,6 +4,7 @@ import Login from '../pages/Login';
 import NavBar from './NavBar';
 import { Routes, Route } from 'react-router-dom';
 import ActivityList from '../pages/ActivityList';
+import FavoriteList from '../pages/FavoriteList';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -22,10 +23,8 @@ function App() {
     <div className='App'>
       <NavBar user={user} setUser={setUser} />
       <Routes>
-        <Route path='/' element={<ActivityList />}>
-          {/* <Route path='login' element={<Login onLogin={setUser} />}></Route> */}
-          {/* <Route path='home' element={<ActivityList  />}></Route> */}
-        </Route>
+        <Route path='/home' element={<ActivityList />}/>
+        <Route path='/favorites' element={<FavoriteList  />}/>
       </Routes>
     </div>
   );

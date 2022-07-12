@@ -16,7 +16,7 @@ function NavBar({user, setUser}) {
     <div>
       <nav> 
       
-        <Link to="/">Home</Link> 
+        <Link to="/home">Home</Link> 
         <Link to="/favorites">Favorites</Link> 
 
         <button onClick={handleLogoutClick}>

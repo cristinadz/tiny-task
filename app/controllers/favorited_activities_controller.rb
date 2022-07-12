@@ -6,5 +6,16 @@ class FavoritedActivitiesController < ApplicationController
         render json: favorite, status: :created
     end
 
+    def index 
+        if params[:activity_id]
+            a = Activity.find(params[:activity_id])
+            category = a.category
+        else
+            category = FavoritedActivity.all 
+        end
+        render json: category
+    end
+
+
 end
 
