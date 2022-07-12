@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :favorited_activities
-  resources :activities
+  resources :activities, only: [:show, :index]
   resources :categories
   resources :users
 

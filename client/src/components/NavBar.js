@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function NavBar({user, setUser}) {
 
@@ -13,10 +14,15 @@ function NavBar({user, setUser}) {
 
   return (
     <div>
-            NAVBAR
+      <nav> 
+      
+        <Link to="/">Home</Link> 
+        <Link to="/favorites">Favorites</Link> 
+
         <button onClick={handleLogoutClick}>
           Logout
         </button>
+      </nav>
     </div>
   )
 }
