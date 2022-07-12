@@ -6,7 +6,7 @@ function FavoriteCard({favorite}) {
     <div>
         <h3> {favorite.activity.name} </h3>
         <img alt='activity' src={favorite.activity.image} />
-        <p> category:  </p>
+        <p> category: {favorite.activity.category} </p>
     </div>
   )
 }
