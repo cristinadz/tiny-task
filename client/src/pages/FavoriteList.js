@@ -3,7 +3,6 @@ import FavoriteCard from "../components/FavoriteCard";
 
 function FavoriteList() {
   const [favorites, setFavorites] = useState([]);
-const [isCompleted, setIsCompleted] = useState(false);
 
   useEffect(() => {
     fetch("/favorited_activities")
@@ -16,17 +15,18 @@ const [isCompleted, setIsCompleted] = useState(false);
     setFavorites(updatedFavorites);
   }
 
-  function onUpdatedFavorite(updatedFavorite) {
-    const newFavorites = favorites.map((favorite) => {
-      return favorite.id === updatedFavorite.id ? updatedFavorite : favorite });
-    setFavorites(newFavorites);
+  function handleUpdateFavorite(updatedFavorite) {
+    const updatedFavoritesArray = favorites.map((favorite) => {
+      return favorite.id === updatedFavorite.id ? updatedFavorite : favorite;
+    });
+    setFavorites(updatedFavoritesArray);
   }
 
   const favoriteCards = favorites.map((favorite) => (
     <FavoriteCard
       favorite={favorite}
       deleteFavorite={deleteFavorite}
-      onUpdatedFavorite={onUpdatedFavorite}
+      updateFavorite = { handleUpdateFavorite }
     />
   ));
 

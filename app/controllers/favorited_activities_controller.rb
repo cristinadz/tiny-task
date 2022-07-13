@@ -13,7 +13,7 @@ class FavoritedActivitiesController < ApplicationController
     def update
         favorite = FavoritedActivity.find_by(id: params[:id])
         favorite.update(favorite_params)
-        render json: favorite
+        render json: favorite, include: 'activity.category'
     end
 
     def destroy
