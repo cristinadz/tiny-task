@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import ActivityList from '../pages/ActivityList';
 import FavoriteList from '../pages/FavoriteList';
 
+
 function App() {
   const [user, setUser] = useState(null);
 
@@ -18,8 +19,6 @@ function App() {
   }, []);
 
   if (!user) return <Login onLogin={setUser} />;
-
-
 
 
   
