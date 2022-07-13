@@ -48,9 +48,9 @@ function LoginForm({ onLogin }) {
 
       <button type='submit'>Login</button>
 
-      {errors.map((err) => (
+      {/* {errors.map((err) => (
         <p key={err}>{err}</p>
-      ))}
+      ))} */}
     </form>
   );
 }
