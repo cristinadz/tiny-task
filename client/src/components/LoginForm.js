@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@chakra-ui/react';
 
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState('');
@@ -17,13 +18,15 @@ function LoginForm({ onLogin }) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ username, password }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => onLogin(user));
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
-    }).then(navigate("/home"))
+    })
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((user) => onLogin(user));
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      })
+      .then(navigate('/home'));
   }
 
   return (
@@ -46,7 +49,7 @@ function LoginForm({ onLogin }) {
         autoComplete='current-password'
       />
 
-      <button type='submit'>Login</button>
+      <Button type='submit'>Login</Button>
 
       {/* {errors.map((err) => (
         <p key={err}>{err}</p>

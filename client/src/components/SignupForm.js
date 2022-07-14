@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@chakra-ui/react';
 
 function SignupForm({ onLogin }) {
   const [username, setUsername] = useState('');
@@ -24,13 +25,15 @@ function SignupForm({ onLogin }) {
         password,
         password_confirmation: passwordConfirmation,
       }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => onLogin(user));
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
-    }).then(navigate("/home"));
+    })
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((user) => onLogin(user));
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      })
+      .then(navigate('/home'));
   }
 
   return (
@@ -68,7 +71,7 @@ function SignupForm({ onLogin }) {
         autoComplete='current-password'
       />
 
-      <button type='submit'>Sign Up</button>
+      <Button type='submit'>Sign Up</Button>
 
       {errors.map((err) => (
         <p key={err}>{err}</p>
