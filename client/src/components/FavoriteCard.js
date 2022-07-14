@@ -37,6 +37,7 @@ const { id, completed: isCompleted } = favorite
       <h3> {favorite.activity.name} </h3>
       <img alt="activity" src={favorite.activity.image} />
       <p> category: {favorite.activity.category.name} </p>
+      <p> description: {favorite.activity.description}</p>
       <button onClick={handleIsCompleted}> {isCompleted ? "mark as complete" : "mark as uncomplete"} </button>
       <button onClick={() => handleDelete(favorite.id)}>Delete</button>
     </div>
