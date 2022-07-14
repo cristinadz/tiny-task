@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { Box, Flex, HStack, Button, Stack } from '@chakra-ui/react';
 
 function NavBar({ user, setUser }) {

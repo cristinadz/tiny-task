@@ -5,7 +5,6 @@ import NavBar from './NavBar';
 import { Routes, Route } from 'react-router-dom';
 import ActivityList from '../pages/ActivityList';
 import FavoriteList from '../pages/FavoriteList';
-import { Box } from '@chakra-ui/react';
 import Profile from '../pages/Profile';
 import EditProfilePage from '../pages/EditProfilePage';
 
