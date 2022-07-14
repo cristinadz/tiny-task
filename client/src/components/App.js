@@ -7,6 +7,7 @@ import ActivityList from '../pages/ActivityList';
 import FavoriteList from '../pages/FavoriteList';
 import {Box} from "@chakra-ui/react";
 import Profile from '../pages/Profile';
+import EditProfilePage from '../pages/EditProfilePage';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <Route path='/home' element={<ActivityList />}/>
         <Route path='/favorites' element={<FavoriteList  />}/>
         <Route path='/profile' element={<Profile user={user} setUser={setUser}  />}/>
+        <Route path='/edit_profile' element={<EditProfilePage user={user} setUser={setUser} />}/>
       </Routes>
       </Box>
      
