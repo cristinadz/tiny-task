@@ -3,16 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom';
+import '@fontsource/annie-use-your-telescope';
 
+const theme = extendTheme({
+  textStyles: {
+    fontFamily: 'Annie Use Your Telescope',
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ChakraProvider theme={theme}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')

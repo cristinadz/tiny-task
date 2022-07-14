@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import ActivityList from '../pages/ActivityList';
 import FavoriteList from '../pages/FavoriteList';
 import Profile from '../pages/Profile';
-
+import EditProfilePage from '../pages/EditProfilePage';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -19,23 +19,17 @@ function App() {
     });
   }, []);
 
-
   if (!user) return <Login onLogin={setUser} />;
 
-  
   return (
-  
     <div className='App'>
-      
-  
       <NavBar user={user} setUser={setUser} />
       <Routes>
         <Route path='/home' element={<ActivityList />}/>
         <Route path='/favorites' element={<FavoriteList  />}/>
         <Route path='/profile' element={<Profile user={user} setUser={setUser}  />}/>
+        <Route path='/edit_profile' element={<EditProfilePage user={user} setUser={setUser} />}/>
       </Routes>
-  
-     
     </div>
   );
 }
