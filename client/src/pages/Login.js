@@ -15,7 +15,7 @@ import {
 function Login({ onLogin }) {
   return (
     <>
-      <Container maxW={'3xl'}>
+      <Container maxW={'3xl'} fontFamily={'Annie Use Your Telescope'}>
         <Stack
           as={Box}
           textAlign={'center'}
@@ -23,16 +23,19 @@ function Login({ onLogin }) {
           py={{ base: 20, md: 36 }}
         >
           <Heading
+            fontFamily={'Annie Use Your Telescope'}
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
             lineHeight={'110%'}
           >
             TinyTask <br />
-            <Text as={'span'} color={'teal'}>
+            <Text as={'span'} color={'orange.400'}>
               activities for kids!
             </Text>
           </Heading>
-          <Text color={'gray.500'}>Dinosaurs and more!</Text>
+          <Text color={'gray.500'} fontFamily='Annie Use Your Telescope'>
+            Dinosaurs and more!
+          </Text>
           <Stack
             direction={'column'}
             spacing={3}
@@ -54,8 +57,8 @@ function Login({ onLogin }) {
                 top={'10px'}
               />
               <Text
+                fontFamily={'Annie Use Your Telescope'}
                 fontSize={'lg'}
-                fontFamily={'Caveat'}
                 position={'absolute'}
                 right={'-35px'}
                 top={'-20px'}
@@ -83,12 +86,6 @@ const Arrow = createIcon({
   ),
 });
 export default Login;
-
-
-
-
-
-
 
 // import React from 'react'
 // import LoginForm from '../components/LoginForm'

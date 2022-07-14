@@ -10,6 +10,7 @@
     "@chakra-ui/react": "^2.2.3",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@fontsource/annie-use-your-telescope": "^4.5.7",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
