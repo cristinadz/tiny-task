@@ -1,53 +1,74 @@
-import React, {useState, useEffect, useMemo} from 'react'
+import React, { useState, useEffect, useMemo } from 'react';
 import ActivityCard from '../components/ActivityCard';
+import { Box, Container, Heading, Stack, Button } from '@chakra-ui/react';
 
 function ActivityList() {
-    const [ activities, setActivities ] = useState([])
-    const [ category, setCategory ] = useState()
+  const [activities, setActivities] = useState([]);
+  const [category, setCategory] = useState();
 
-    useEffect(() => {
-        fetch("/activities")
-          .then((r) => r.json())
-          .then(setActivities);
-      }, []);
+  useEffect(() => {
+    fetch('/activities')
+      .then((r) => r.json())
+      .then(setActivities);
+  }, []);
 
-    // function filterEducation(e){
-    //   console.log(e.target.value)
-    //   let categoryName = e.target.value
-    //   const filteredActivities = activities.filter((activity) => activity.category.name == categoryName );
-    //   setActivities(filteredActivities);
-    // }
+  // function filterEducation(e){
+  //   console.log(e.target.value)
+  //   let categoryName = e.target.value
+  //   const filteredActivities = activities.filter((activity) => activity.category.name == categoryName );
+  //   setActivities(filteredActivities);
+  // }
 
-    function getFilteredList(){
-      if (!category){
-        return activities
-      }
-      return activities.filter( activity => activity.category.name === category )
+  function getFilteredList() {
+    if (!category) {
+      return activities;
     }
+    return activities.filter((activity) => activity.category.name === category);
+  }
 
-    const filteredList = useMemo(getFilteredList, [category, activities]);
+  const filteredList = useMemo(getFilteredList, [category, activities]);
 
-    function handleCategoryChange(e){
-      setCategory(e.target.value)
-    }
+  function handleCategoryChange(e) {
+    setCategory(e.target.value);
+  }
 
-    const activityCards = filteredList.map( (activity) => 
-    <ActivityCard activity = { activity } />
-)
+  const activityCards = filteredList.map((activity) => (
+    <ActivityCard activity={activity} />
+  ));
 
   return (
-    
+    <Box p={5}>
+      <Stack spacing={4} as={Container} maxW={'400px'} textAlign={'center'}>
+        <Heading fontSize={'3xl'}>Filter by Category</Heading>
+        <Button
+          bg={'orange.300'}
+          value='Education'
+          onClick={handleCategoryChange}
+        >
+          {' '}
+          Education{' '}
+        </Button>
+        <Button
+          bg={'orange.300'}
+          value='Arts & Crafts'
+          onClick={handleCategoryChange}
+        >
+          {' '}
+          Arts & Crafts{' '}
+        </Button>
+        <Button
+          bg={'orange.300'}
+          value='Movement'
+          onClick={handleCategoryChange}
+        >
+          {' '}
+          Movement{' '}
+        </Button>
+      </Stack>
 
-    
-    <div> 
-      <p> filter by category: </p>
-      <button type='button' value = "Education" onClick={ handleCategoryChange }> Education </button>
-      <button type='button' value = "Arts & Craft" onClick={ handleCategoryChange }> Arts & Crafts </button>
-      <button type='button' value = "Movement" onClick={ handleCategoryChange }> Movement  </button>
-
-      {activityCards}
-    </div>
-  )
+      <Container>{activityCards}</Container>
+    </Box>
+  );
 }
 
-export default ActivityList
+export default ActivityList;
