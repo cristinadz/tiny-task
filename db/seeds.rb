@@ -8,7 +8,7 @@
 
 puts "Category name.."
 c1 = Category.create(name: "Education")
-c2 = Category.create(name: "Arts & Craft")
+c2 = Category.create(name: "Arts & Crafts")
 c3 = Category.create(name: "Movement")
 
 
