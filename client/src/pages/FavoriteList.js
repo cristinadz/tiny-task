@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import FavoriteCard from "../components/FavoriteCard";
+import React, { useState, useEffect } from 'react';
+import FavoriteCard from '../components/FavoriteCard';
+import { Box, Container, Heading, Stack, Button } from '@chakra-ui/react';
 
 function FavoriteList() {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
-    fetch("/favorited_activities")
+    fetch('/favorited_activities')
       .then((r) => r.json())
       .then(setFavorites);
   }, []);
@@ -26,11 +27,20 @@ function FavoriteList() {
     <FavoriteCard
       favorite={favorite}
       deleteFavorite={deleteFavorite}
-      updateFavorite = { handleUpdateFavorite }
+      updateFavorite={handleUpdateFavorite}
     />
   ));
 
-  return <div>{favoriteCards}</div>;
+  return (
+    <>
+      <Box p={5}>
+        <Stack spacing={4} as={Container} maxW={'400px'} textAlign={'center'}>
+          <Heading fontSize={'3xl'}>My favorites</Heading>
+        </Stack>
+      </Box>
+      <Container>{favoriteCards}</Container>;
+    </>
+  );
 }
 
 export default FavoriteList;
