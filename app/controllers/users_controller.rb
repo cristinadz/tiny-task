@@ -10,6 +10,11 @@ class UsersController < ApplicationController
         render json: @current_user, include: :category
     end
 
+    def update 
+        @current_user.update!(user_params)
+        render json: @current_user, status: :accepted
+    end
+
 private
 
 def user_params

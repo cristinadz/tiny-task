@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   
   resources :favorited_activities
-    
-    resources :categories, only: [:index]
-  
+  resources :categories, only: [:index]
   resources :activities, only: [:show, :index]
-  resources :users
+  resources :users, only: [:create, :show, :update]
 
   post "/signup", to: "users#create"
   get "/me", to: "users#show"

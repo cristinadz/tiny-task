@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import { Routes, Route } from 'react-router-dom';
 import ActivityList from '../pages/ActivityList';
 import FavoriteList from '../pages/FavoriteList';
+import Profile from '../pages/Profile';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path='/home' element={<ActivityList />}/>
         <Route path='/favorites' element={<FavoriteList  />}/>
+        <Route path='/profile' element={<Profile user={user} setUser={setUser}  />}/>
       </Routes>
     </div>
   );
