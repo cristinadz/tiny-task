@@ -3,15 +3,7 @@ html {
 }
 body {
   background: url("../images/v3.png") no-repeat bottom center fixed !important;
-  /* background-position: bottom center !important; */
-  /* background-size: cover !important; */
-  
-
-  /* background: no-repeat bottom center fixed !important; */
-  
 }
-
-/* good code: background: url("../images/dinosaur.png") no-repeat bottom center fixed !important; */
 
 /* 
 .App {

@@ -7,6 +7,7 @@ import {
   Container,
   Text,
   Button,
+  Flex,
   Stack,
   Icon,
   useColorModeValue,
@@ -34,16 +35,22 @@ function Login({ onLogin }) {
           </Heading>
           <Text color={'gray.500'}>Dinosaurs and more!</Text>
           <Stack
-            direction={'column'}
+           direction={'column'}
             spacing={3}
             align={'center'}
             alignSelf={'center'}
             position={'relative'}
           >
-            <Box>
+            {/* <Box
+            rounded={"sm"}
+          bg={useColorModeValue("orange.50", "orange.400")}
+          boxShadow={"lg"}
+          p={4} > */}
+          <Flex flex={1} align={'center'} justify={'center'}>
               <LoginForm onLogin={onLogin} />
               <SignupForm onLogin={onLogin} />
-            </Box>
+              </Flex>
+            {/* </Box> */}
             <Box>
               <Icon
                 as={Arrow}

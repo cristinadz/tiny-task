@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Center } from '@chakra-ui/react';
+
+
+
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
     fetch('/logout', { method: 'DELETE' }).then((r) => {
@@ -10,7 +13,8 @@ function NavBar({ user, setUser }) {
     });
   }
   return (
-    <Center bg='teal' h='100px' color='white'>
+    
+    <Center bg='orange.500' h='100px' color='white'>
       <nav>
         <Link to='/home'>Home</Link>
         <Link to='/favorites'>Favorites</Link>
