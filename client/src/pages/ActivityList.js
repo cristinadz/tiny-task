@@ -41,7 +41,7 @@ function ActivityList() {
       <Stack spacing={4} as={Container} maxW={'400px'} textAlign={'center'}>
         <Heading fontSize={'3xl'}>Filter by Category</Heading>
         <Button
-          bg={'orange.300'}
+          bg={'green.300'}
           value='Education'
           onClick={handleCategoryChange}
         >
@@ -49,7 +49,7 @@ function ActivityList() {
           Education{' '}
         </Button>
         <Button
-          bg={'orange.300'}
+          bg={'green.300'}
           value='Arts & Crafts'
           onClick={handleCategoryChange}
         >
@@ -57,7 +57,7 @@ function ActivityList() {
           Arts & Crafts{' '}
         </Button>
         <Button
-          bg={'orange.300'}
+          bg={'green.300'}
           value='Movement'
           onClick={handleCategoryChange}
         >

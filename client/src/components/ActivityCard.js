@@ -81,7 +81,11 @@ function ActivityCard({ activity }) {
               </Accordion>
             </Stack>
             <Stack mt={6} direction={'row'} spacing={4} align={'center'}>
-              <Button onClick={handleAddFavorite} value={activity.id}>
+              <Button
+                onClick={handleAddFavorite}
+                value={activity.id}
+                bg={'yellow.200'}
+              >
                 {' '}
                 Favorite 💟{' '}
               </Button>

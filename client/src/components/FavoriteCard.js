@@ -72,7 +72,7 @@ function FavoriteCard({ favorite, deleteFavorite, updateFavorite }) {
           </Box>
           <Stack>
             <Text
-              color={'pink.300'}
+              color={'blue.300'}
               textTransform={'uppercase'}
               fontWeight={800}
               fontSize={'sm'}
@@ -106,6 +106,7 @@ function FavoriteCard({ favorite, deleteFavorite, updateFavorite }) {
               <Checkbox onChange={handleIsCompleted}> did it! </Checkbox>
               <Spacer />
               <IconButton
+                bg={'red.400'}
                 aria-label={'delete'}
                 onClick={() => handleDelete(favorite.id)}
                 icon={<DeleteIcon />}
