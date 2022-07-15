@@ -8,6 +8,7 @@ import FavoriteList from '../pages/FavoriteList';
 import Profile from '../pages/Profile';
 import EditProfilePage from '../pages/EditProfilePage';
 
+
 function App() {
   const [user, setUser] = useState(null);
 
@@ -19,7 +20,8 @@ function App() {
     });
   }, []);
 
-  if (!user) return <Login onLogin={setUser} />;
+
+  if (!user) return <Login onLogin={setUser} />
 
   return (
     <div className='App'>
