@@ -10,8 +10,6 @@ import {
   IconButton,
   Checkbox,
   Spacer,
-} from '@chakra-ui/react';
-import {
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -59,6 +57,7 @@ function FavoriteCard({ favorite, deleteFavorite, updateFavorite }) {
           rounded={'md'}
           p={6}
           overflow={'hidden'}
+          bg={'white'}
         >
           <Box
             h={'210px'}
