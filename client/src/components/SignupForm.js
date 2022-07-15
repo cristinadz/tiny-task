@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Button,
+  Text,
   Box,
   Flex,
   FormControl,
@@ -118,14 +119,14 @@ function SignupForm({ onLogin }) {
                 <Button colorScheme={'blue'} variant={'solid'} type='submit'>
                   Sign in
                 </Button>
-                <Alert status='error' borderRadius={4}>
-                  <AlertIcon />
-                  <AlertDescription>
-                    {errors.map((err) => (
+                {errors.map((err) => (
+                  <Alert status='error' borderRadius={4}>
+                    <AlertIcon />
+                    <AlertDescription>
                       <p>{err}</p>
-                    ))}
-                  </AlertDescription>
-                </Alert>
+                    </AlertDescription>
+                  </Alert>
+                ))}
               </Stack>
             </Stack>
           </Box>

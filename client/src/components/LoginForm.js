@@ -90,18 +90,14 @@ function LoginForm({ onLogin }) {
                 >
                   Log in
                 </Button>
-                {errors ? (
-                  <Box my={4}>
-                    <Alert status='error' borderRadius={4}>
-                      <AlertIcon />
-                      <AlertDescription>
-                        {errors.map((err) => (
-                          <p>{err}</p>
-                        ))}
-                      </AlertDescription>
-                    </Alert>
-                  </Box>
-                ) : null}
+                {errors.map((err) => (
+                  <Alert status='error' borderRadius={4}>
+                    <AlertIcon />
+                    <AlertDescription>
+                      <p>{err}</p>
+                    </AlertDescription>
+                  </Alert>
+                ))}
               </Stack>
             </Stack>
           </Box>
