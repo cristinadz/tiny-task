@@ -39,16 +39,15 @@ function ActivityCard({ activity }) {
           overflow={'hidden'}
           bg={'white'}
         >
-          <Box
-            h={'210px'}
-            bg={'gray.100'}
-            mt={-6}
-            mx={-6}
-            mb={6}
-            pos={'relative'}
-          >
-            <Image src={activity.image} layout={'fill'} />
-          </Box>
+          <Center>
+            <Image
+              h={'210px'}
+              src={activity.image}
+              mt={-6}
+              mx={-6}
+              mb={6}
+            ></Image>
+          </Center>
           <Stack>
             <Text
               color={'pink.300'}

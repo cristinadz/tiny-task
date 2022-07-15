@@ -59,16 +59,15 @@ function FavoriteCard({ favorite, deleteFavorite, updateFavorite }) {
           overflow={'hidden'}
           bg={'white'}
         >
-          <Box
-            h={'210px'}
-            bg={'gray.100'}
-            mt={-6}
-            mx={-6}
-            mb={6}
-            pos={'relative'}
-          >
-            <Image src={favorite.activity.image} layout={'fill'} />
-          </Box>
+          <Center>
+            <Image
+              h={'210px'}
+              src={favorite.activity.image}
+              mt={-6}
+              mx={-6}
+              mb={6}
+            ></Image>
+          </Center>
           <Stack>
             <Text
               color={'blue.300'}
