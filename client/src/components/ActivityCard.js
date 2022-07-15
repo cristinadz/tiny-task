@@ -7,8 +7,6 @@ import {
   Stack,
   Image,
   Button,
-} from '@chakra-ui/react';
-import {
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -39,6 +37,7 @@ function ActivityCard({ activity }) {
           rounded={'md'}
           p={6}
           overflow={'hidden'}
+          bg={'white'}
         >
           <Box
             h={'210px'}
