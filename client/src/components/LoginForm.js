@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Flex,
   Box,
@@ -14,21 +14,21 @@ import {
   Alert,
   AlertIcon,
   AlertDescription,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 function LoginForm({ onLogin }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch("/login", {
-      method: "POST",
+    fetch('/login', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ username, password }),
     })
@@ -36,82 +36,78 @@ function LoginForm({ onLogin }) {
         if (r.ok) {
           r.json().then((user) => onLogin(user));
         } else {
-          r.json().then((err) => setErrors(err.errors))
+          r.json().then((err) => setErrors(err.errors));
           console.log(errors);
         }
       })
-      .then(navigate("/home"));
+      .then(navigate('/home'));
   }
 
   return (
-    <Flex
-      align={"top"}
-      justify={"top"}
-      pt={0}
-      flex={1}
-    >
-      <Stack spacing={3} mx={"auto"} maxW={"md"} >
-        <Stack align={"4"}>
-          <Heading lineHeight={1.1} fontSize={{ base: "2xl", md: "3xl" }}>
-            Log in to your account
-          </Heading>
-        </Stack>
-        <Box
-          bg={useColorModeValue("orange.50", "orange.400")}
-          boxShadow={"lg"}
-          rounded={'xl'}
-          p={4}
-        >
-          <Stack spacing={2}>
-            <form onSubmit={handleSubmit}>
-              <FormControl id="username" isRequired>
+    <form onSubmit={handleSubmit}>
+      <Stack direction={{ base: 'column', md: 'row' }}>
+        <Flex flex={1} align={'center'} justify={'center'}>
+          <Box
+            bg={useColorModeValue('orange.50', 'orange.400')}
+            boxShadow={'lg'}
+            rounded={'xl'}
+            p={4}
+          >
+            <Stack spacing={3} mx={'auto'} maxW={'md'}>
+              <Stack align={'4'}>
+                <Heading lineHeight={1.1} fontSize={{ base: '2xl', md: '3xl' }}>
+                  Log in to your account
+                </Heading>
+              </Stack>
+              <FormControl id='username' isRequired>
                 <FormLabel>Username</FormLabel>
                 <Input
-                  type="text"
-                  id="username"
-                  autoComplete="off"
+                  type='text'
+                  id='username'
+                  autoComplete='off'
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
               </FormControl>
-              <FormControl id="password" isRequired mt={4}>
+              <FormControl id='password' isRequired mt={4}>
                 <FormLabel>Password</FormLabel>
                 <Input
-                  type="password"
-                  id="password"
+                  type='password'
+                  id='password'
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  autoComplete="current-password"
+                  autoComplete='current-password'
                 />
               </FormControl>
               <Stack spacing={10}>
                 <Button
-                  bg={"blue.400"}
-                  color={"white"}
+                  bg={'blue.400'}
+                  color={'white'}
                   _hover={{
-                    bg: "blue.500",
+                    bg: 'blue.500',
                   }}
-                  type="submit"
+                  type='submit'
                 >
                   Log in
                 </Button>
-                { errors ? 
-                (<Box my={4}>
-                  <Alert status="error" borderRadius={4}>
-                    <AlertIcon />
-                    <AlertDescription>
-                      {errors.map((err) => (
-                        <p>{err}</p>
-                      ))}
-                    </AlertDescription> 
-                  </Alert>
-                </Box>) : null }
+                {errors ? (
+                  <Box my={4}>
+                    <Alert status='error' borderRadius={4}>
+                      <AlertIcon />
+                      <AlertDescription>
+                        {errors.map((err) => (
+                          <p>{err}</p>
+                        ))}
+                      </AlertDescription>
+                    </Alert>
+                  </Box>
+                ) : null}
               </Stack>
-            </form>
-          </Stack>
-        </Box>
+            </Stack>
+          </Box>
+        </Flex>
       </Stack>
-    </Flex>
+    </form>
   );
 }
 
